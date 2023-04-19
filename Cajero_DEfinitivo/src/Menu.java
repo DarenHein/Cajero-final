@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import javax.swing.text.StyledEditorKit.StyledTextAction;
 
 public class Menu extends JFrame{
 
@@ -23,6 +24,10 @@ public class Menu extends JFrame{
     private JButton b3; 
     private JButton b4; 
     private JButton b5; 
+    private JButton b6; 
+    private JButton b7; 
+    private JButton b8; 
+
     
     public Menu(){
 
@@ -64,9 +69,9 @@ public class Menu extends JFrame{
         e1.setFont(new Font("arial",Font.BOLD,22)); 
         panel.add(e1); 
 
-        e2 = new JLabel(); 
+        e2 = new JLabel("Saldo"); // etiqueta del saldo 
         e2.setBounds(50, 40, 100, 20);
-        e2.setVisible(false);
+        e2.setVisible(true);
         panel2.add(e2); 
 
         e3 = new JLabel(); 
@@ -95,37 +100,19 @@ public class Menu extends JFrame{
             public void actionPerformed(ActionEvent e) {
              e1.setText("Retiros");   
              setTitle("Retiros");  
-             e2.setText("saldo : ");
-             e2.setVisible(true);
              e3.setVisible(true);
              e3.setText("Retiro : ");
              campo.setVisible(true);
              b5.setVisible(true);
+             b6.setVisible(true);
        
             }
             
         });
         panel.add(b); 
 
-        b2 = new JButton(); 
-        b2.setBounds(20, 250, 120, 20);
-        b2.setText("Consulta");
-        b2.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-             e1.setText("Consulta");
-             b5.setVisible(false);
-             setTitle("Consulta"); 
-
-        
-            }
-            
-        });
-        panel.add(b2);
-
         b3 = new JButton(); 
-        b3.setBounds(20, 300, 120, 20);
+        b3.setBounds(20, 250, 120, 20);
         b3.setText("Deposito");
         b3.addActionListener(new ActionListener() {
 
@@ -134,11 +121,11 @@ public class Menu extends JFrame{
              b5.setVisible(false);
              e1.setText("Depositos");  
              setTitle("Deposito"); 
-             e2.setText("saldo : ");
-             e2.setVisible(true);
              e3.setVisible(true);
              e3.setText("Deposito : ");
+             b7.setVisible(true);
              campo.setVisible(true);
+
            
             }
             
@@ -146,7 +133,7 @@ public class Menu extends JFrame{
         panel.add(b3);
 
         b4 = new JButton(); 
-        b4.setBounds(20, 350, 120, 20);
+        b4.setBounds(20, 300, 120, 20);
         b4.setText("Salir");
         b4.addActionListener(new ActionListener() {
 
@@ -175,6 +162,18 @@ public class Menu extends JFrame{
             
         });
         panel2.add(b5); 
+
+        b6 = new JButton(); 
+        b6.setBounds(100, 200, 120, 20);
+        b6.setText("Retirar");
+        b6.setVisible(false);
+        panel2.add(b6); 
+
+        b7 = new JButton(); 
+        b7.setBounds(100, 200, 120, 20);
+        b7.setText("Deposito");
+        b7.setVisible(false);
+        panel2.add(b7); 
 
 
 
